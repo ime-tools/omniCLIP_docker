@@ -20,7 +20,8 @@ RUN apt update && apt install --yes git \
 	python \
 	wget \
 	python-pip \
-	python-numpy && \
+	python-numpy \
+	python-tk  && \
     rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip && \
