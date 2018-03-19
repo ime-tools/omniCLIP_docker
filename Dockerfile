@@ -20,7 +20,8 @@ RUN apt update && apt install --yes git \
 	python \
 	wget \
 	python-pip \
-	python-numpy && \
+	python-numpy \
+	python-tk  && \
     rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip && \
@@ -44,4 +45,7 @@ RUN git clone \
        https://github.com/philippdre/omniCLIP.git && \
     cd /opt/omniCLIP/stat/ && ./CompileCython.sh
 
+ENV PYTHONPATH=${PYTHONPATH}:/opt/omniCLIP:/opt/omniCLIP/stat:/opt/omniCLIP/data_parsing
+
+VOLUME  /data
 WORKDIR /data/

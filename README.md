@@ -4,7 +4,7 @@ Docker file for creating omniCLIP Docker Container [omniCLIP-Repository](https:/
 ## Usage
 ```
 docker pull imetools/omniclip_docker
-docker run -v DATADIRECTORY:/data docker pull imetools/omniclip_docker
+docker run -v DATADIRECTORY:/data imetools/omniclip_docker
 ```
 
 ## Automated builds
