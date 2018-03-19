@@ -5,10 +5,11 @@ MAINTAINER Daniel Amsel "daniel.amsel@ime.fraunhofer.de"
 
 WORKDIR /opt/
 
-RUN apt update && apt install --yes --no-install-recommends git \ 
+RUN apt update && apt install --yes git \ 
 	python \
 	wget \
-	python-pip
+	python-pip \
+	python-numpy
 
 RUN git clone https://github.com/philippdre/omniCLIP.git
 
@@ -26,13 +27,15 @@ RUN pip install biopython \
 	pysam \
 	scikit-learn \
 	scipy \
-	statsmodels
+	statsmodels \
+	emission
 
-RUN git clone https://github.com/numpy/numpy.git
 
-WORKDIR /opt/numpy/
+#RUN git clone https://github.com/numpy/numpy.git
 
-RUN python setup.py build install
+#WORKDIR /opt/numpy/
+
+#RUN python setup.py build install
 
 WORKDIR /opt/omniCLIP/stat/
 
@@ -40,4 +43,6 @@ RUN ./CompileCython.sh
 
 RUN  rm -rf /var/lib/apt/lists/*
 
+RUN echo "export PATH=$PATH:/opt/omniCLIP/" >> ~/.bashrc
+RUN echo "alias omniCLIP='python /opt/omniCLIP/omniCLIP.py'" >> ~/.bashrc
 WORKDIR /data/
