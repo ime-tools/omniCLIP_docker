@@ -45,4 +45,6 @@ RUN git clone \
        https://github.com/philippdre/omniCLIP.git && \
     cd /opt/omniCLIP/stat/ && ./CompileCython.sh
 
+ENV PYTHONPATH=${PYTHONPATH}:/opt/omniCLIP:/opt/omniCLIP/stat:/opt/omniCLIP/data_parsing
+
 WORKDIR /data/
