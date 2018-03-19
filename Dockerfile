@@ -47,4 +47,5 @@ RUN git clone \
 
 ENV PYTHONPATH=${PYTHONPATH}:/opt/omniCLIP:/opt/omniCLIP/stat:/opt/omniCLIP/data_parsing
 
+VOLUME  /data
 WORKDIR /data/
