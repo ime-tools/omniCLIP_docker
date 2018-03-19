@@ -5,7 +5,7 @@ MAINTAINER Daniel Amsel "daniel.amsel@ime.fraunhofer.de"
 
 WORKDIR /opt/
 
-RUN apt update && apt install --yes git 
+RUN apt update && apt install --yes --no-install-recommends git \ 
 	python \
 	wget \
 	python-pip
