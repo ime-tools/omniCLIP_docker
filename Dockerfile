@@ -8,8 +8,7 @@ WORKDIR /opt/
 RUN apt update && apt install --yes git 
 	python \
 	wget \
-	python-pip \
-	python-numpy
+	python-pip
 
 RUN git clone https://github.com/philippdre/omniCLIP.git
 
@@ -28,6 +27,12 @@ RUN pip install biopython \
 	scikit-learn \
 	scipy \
 	statsmodels
+
+RUN git clone https://github.com/numpy/numpy.git
+
+WORKDIR /opt/numpy/
+
+RUN python setup.py build install
 
 WORKDIR /opt/omniCLIP/stat/
 
