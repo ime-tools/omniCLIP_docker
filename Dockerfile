@@ -1,4 +1,5 @@
-FROM ubuntu:latest
+ARG baseimage_version=xenial
+FROM ubuntu:${baseimage_version}
 
 MAINTAINER Daniel Amsel "daniel.amsel@ime.fraunhofer.de"
  
