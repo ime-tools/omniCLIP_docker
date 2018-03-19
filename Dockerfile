@@ -31,18 +31,10 @@ RUN pip install biopython \
 	emission
 
 
-#RUN git clone https://github.com/numpy/numpy.git
-
-#WORKDIR /opt/numpy/
-
-#RUN python setup.py build install
-
 WORKDIR /opt/omniCLIP/stat/
 
 RUN ./CompileCython.sh
 
 RUN  rm -rf /var/lib/apt/lists/*
 
-RUN echo "export PATH=$PATH:/opt/omniCLIP/" >> ~/.bashrc
-RUN echo "alias omniCLIP='python /opt/omniCLIP/omniCLIP.py'" >> ~/.bashrc
 WORKDIR /data/
