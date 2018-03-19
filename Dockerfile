@@ -1,7 +1,18 @@
 ARG baseimage_version=xenial
 FROM ubuntu:${baseimage_version}
 
-LABEL maintainer="daniel.amsel@ime.fraunhofer.de"
+ARG version=master
+ARG VCS_REF
+ARG BUILD_DATE
+
+RUN echo "VCS_REF: "${VCS_REF}", BUILD_DATE: "${BUILD_DATE}", branch: "${version}
+
+LABEL maintainer="daniel.amsel@ime.fraunhofer.de" \
+      description="Container for the omniCLIP package" \
+      version="1.0" \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.vcs-url="https://github.com/ime-tools/omniCLIP_docker"
 
 WORKDIR /opt/
 
