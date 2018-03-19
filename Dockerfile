@@ -23,8 +23,6 @@ RUN apt update && apt install --yes git \
 	python-numpy && \
     rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://github.com/philippdre/omniCLIP.git
-
 RUN pip install --upgrade pip && \
     pip install biopython \
 	brewer2mpl \
@@ -41,9 +39,7 @@ RUN pip install --upgrade pip && \
 	statsmodels \
 	emission
 
-
-WORKDIR /opt/omniCLIP/stat/
-
-RUN ./CompileCython.sh
+RUN git clone https://github.com/philippdre/omniCLIP.git && \
+    cd /opt/omniCLIP/stat/ && ./CompileCython.sh
 
 WORKDIR /data/
