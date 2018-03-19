@@ -1,8 +1,7 @@
 ARG baseimage_version=xenial
 FROM ubuntu:${baseimage_version}
 
-MAINTAINER Daniel Amsel "daniel.amsel@ime.fraunhofer.de"
- 
+LABEL maintainer="daniel.amsel@ime.fraunhofer.de"
 
 WORKDIR /opt/
 
