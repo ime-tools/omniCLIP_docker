@@ -25,9 +25,8 @@ RUN apt update && apt install --yes git \
 
 RUN git clone https://github.com/philippdre/omniCLIP.git
 
-RUN pip install --upgrade pip
-
-RUN pip install biopython \
+RUN pip install --upgrade pip && \
+    pip install biopython \
 	brewer2mpl \
 	cython \
 	gffutils \
