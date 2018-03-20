@@ -42,9 +42,10 @@ RUN pip install --upgrade pip && \
 	emission && \
     pip install --upgrade multiprocessing
 
-RUN git clone \
-       --branch master \
-       https://github.com/philippdre/omniCLIP.git && \
+RUN git clone https://github.com/philippdre/omniCLIP.git && \
+    cd omniCLIP && \
+    git checkout 2db985716a83c8a15fbae4482b88b6059ec0d021 && \
+    rm -rf .git && \
     cd /opt/omniCLIP/stat/ && ./CompileCython.sh
 
 ENV PYTHONPATH=${PYTHONPATH}:/opt/omniCLIP:/opt/omniCLIP/stat:/opt/omniCLIP/data_parsing
