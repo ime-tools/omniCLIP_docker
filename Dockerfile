@@ -43,7 +43,7 @@ RUN pip install --upgrade pip && \
     pip install --upgrade multiprocessing
 
 RUN git clone \
-       --branch v0.1.0 \
+       --branch master \
        https://github.com/philippdre/omniCLIP.git && \
     cd /opt/omniCLIP/stat/ && ./CompileCython.sh
 
