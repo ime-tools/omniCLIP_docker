@@ -39,6 +39,7 @@ RUN pip install --upgrade pip && \
 	scikit-learn \
 	scipy \
 	statsmodels \
+	multiprocessing \
 	emission
 
 RUN git clone \
