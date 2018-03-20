@@ -25,7 +25,7 @@ RUN apt update && apt install --yes git \
     rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip && \
-    pip install --upgrade \
+    pip install \
         biopython \
 	brewer2mpl \
 	cython \
@@ -39,8 +39,8 @@ RUN pip install --upgrade pip && \
 	scikit-learn \
 	scipy \
 	statsmodels \
-	multiprocessing \
-	emission
+	emission && \
+    pip install --upgrade multiprocessing
 
 RUN git clone \
        --branch v0.1.0 \
