@@ -25,7 +25,8 @@ RUN apt update && apt install --yes git \
     rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip && \
-    pip install biopython \
+    pip install --upgrade \
+        biopython \
 	brewer2mpl \
 	cython \
 	gffutils \
